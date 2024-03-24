@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BookDetail</title>
+</head>
+<body>
+<h2>这是书籍详情页</h2>
+<li>书籍名称：{{book.title}}</li>
+<li>书籍出版社：
+    {% for publisher in book.publishers.all %}
+        <a href="{% url 'pdetail' publisher.id %}">{{publisher.name}}</a>
+        {%  if not forloop.last %}|
+        {%  endif %}
+    {% endfor %}
+</li>
+<li>书籍出版时间：{{book.publish_date}}</li>
+<li>
+    书籍作者：<a href="{% url 'AuthorDetail' book.author.id  %}">{{book.author}}</a>
+</li>
+</body>
+</html>

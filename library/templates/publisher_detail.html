@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出版社详情页</title>
+</head>
+<body>
+<h2>出版社详情页</h2>
+<ul>
+   <li>出版社名称：{{publisher.name}}</li>
+   <li>出版社地址：{{publisher.address}}</li>
+   <li>出版社城市：{{publisher.city}}</li>
+   <li>出版社省份：{{publisher.state_province}}</li>
+    <li>出版社作品：
+        {% for book in publisher.book_set.all %}
+            <a href="{% url 'BookDetail' book.id %}">{{book.title}}</a>
+            {%  if not forloop.last %}|
+            {%  endif %}
+        {% endfor %}
+    </li>
+</ul>
+</body>
+</html>

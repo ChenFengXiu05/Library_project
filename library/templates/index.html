@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<h2>这是index首页</h2>
+    {%  for book in Books %}
+        <li>
+            <a href="{% url 'BookDetail' book.id %}">
+                {{book.title}}</a>
+        </li>
+    {%  endfor  %}
+</body>
+</html>
