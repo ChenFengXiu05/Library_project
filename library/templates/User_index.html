@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户首页</title>
+</head>
+<body>
+<h2>用户首页</h2>
+<!--对于是否有cookie进行判断-->
+{% if user %}
+    <h5>当前登录的用户为{{user.username}}点击首页可进入首页</h5>
+<br>
+<a href="{% url 'index' %}">首页</a>
+<!--注销：删除cookie-->
+<br>
+<a href="{% url 'logout' %}">注销</a>
+<!--让浏览器记住登录-->
+{% else %}
+    <a href="{% url 'register' %}">注册</a>
+    <br>
+    <a href="{% url 'login' %}">登录</a>
+{% endif %}
+</body>
+</html>

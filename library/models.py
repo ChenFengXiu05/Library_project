@@ -27,4 +27,10 @@ class Book(models.Model):
     def __str__(self):
         return self.title
 
+class UserModel(models.Model):
+    username = models.CharField(max_length=100,unique=True)
+    password = models.CharField(max_length=100)
+    age = models.IntegerField(default=18)
+
+
 
