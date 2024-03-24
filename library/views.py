@@ -25,3 +25,5 @@ def Author_detail(request,aid):
 # master分支合并冲突演示
 
 # 热修分支hot-fix演示
+
+# push操作演示
