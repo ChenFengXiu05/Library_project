@@ -27,3 +27,5 @@ def Author_detail(request,aid):
 # 热修分支hot-fix演示
 
 # push操作演示
+
+# pull远程修改拉取操作演示
