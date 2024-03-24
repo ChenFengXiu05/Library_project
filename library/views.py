@@ -21,3 +21,4 @@ def Author_detail(request,aid):
     author = Author.objects.get(pk=aid)
     return render(request,'author_detail.html',{'author':author})
 
+# master分支合并冲突演示
